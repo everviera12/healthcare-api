@@ -46,24 +46,8 @@ try:
         specialty='Family Medicine', 
         gender='male'
     )
-    
-    doctor2 = DoctorModel(
-        id=2,
-        name='Sam Smith',
-        specialty='Pediatrics',
-        gender='male'
-    )
-    
-    doctor3 = DoctorModel(
-        id=3,
-        name='Alison Brown',
-        specialty='Dermatology',
-        gender='female'
-    )
         
     print(doctor)
-    print(doctor2)
-    print(doctor3)
 
 except ValidationError as err:
     print(err)
