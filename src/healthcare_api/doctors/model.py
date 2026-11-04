@@ -38,7 +38,9 @@ class DoctorModel(BaseModel):
         elif value not in ['male', 'female']:
             raise ValueError('Invalid gender')
         return value
-    
+
+
+# Example how to use the DoctorModel class
 try: 
     doctor = DoctorModel(
         id=1, 
