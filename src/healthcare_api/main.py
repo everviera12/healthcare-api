@@ -1,11 +1,16 @@
 from fastapi import FastAPI
+from healthcare_api.doctors.route import router as doctors_router
 
-app = FastAPI()
+app = FastAPI(
+    title="Healthcare API",
+    version="1.0.0",
+    description="System for managing healthcare data."
+)
+
+app.include_router(doctors_router)
 
 @app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str | None = None):
-    return {"item_id": item_id, "q": q}
+def root():
+    return {
+        "message": "Server is running. See /docs for API documentation."
+    }
